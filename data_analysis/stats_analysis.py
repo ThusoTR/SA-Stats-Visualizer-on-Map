@@ -1,7 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import datetime
-import seaborn as sns
 
 population_data = pd.read_excel ('Country projection by population group, sex and age (2002-2020).xlsx', sheet_name = 'Sheet1')
 
