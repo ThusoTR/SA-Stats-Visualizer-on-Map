@@ -22,7 +22,7 @@ for x in range(19):
 SA = population_growth.T.plot.bar(color = '#40cfcc', title = 'South Africa population trends (2002 to 2020)')
 SA.set_xlabel("Year")
 SA.set_ylabel("Population (Million)")
-
+plt.subplots_adjust(left=None, bottom= 0.25, right= None, top=None, wspace=None, hspace=None)
 
 population_by_sex_and_age = population_data.iloc[4:38, [23, 24, 43]]
 population_by_sex_and_age.columns = ['Sex', 'Age', 'Population \n(Thousand)']
@@ -50,16 +50,27 @@ SA_POP_BY_GRP_AND_SEX = SA_POP_BY_GRP_AND_SEX.iloc[2:6, 0:7]
 SA_POP_BY_GRP_AND_SEX.columns = ['Population Group', 'Total Male Population', '% of Total S.A Male Population',
                                  'Total of Female population', '% of Total S.A female Population', 'Total',
                                  '% of Total S.A Population']
+
+SA_POP_BY_GRP_AND_SEX['Total Male Population'] = SA_POP_BY_GRP_AND_SEX['Total Male Population'].div(1E6)
+SA_POP_BY_GRP_AND_SEX['Total of Female population'] = SA_POP_BY_GRP_AND_SEX['Total of Female population'].div(1E6)
+SA_POP_BY_GRP_AND_SEX['Total'] = SA_POP_BY_GRP_AND_SEX['Total'].div(1E6)
+
 Plot_Absolute_Val_Of_SA_POP_BY_GRP_AND_SEX = SA_POP_BY_GRP_AND_SEX.iloc[0:4, [0, 1, 3]]
 Plot_Absolute_Val_Of_SA_POP_BY_GRP_AND_SEX = Plot_Absolute_Val_Of_SA_POP_BY_GRP_AND_SEX.set_index('Population Group')
-Population_Group_Plot = Plot_Absolute_Val_Of_SA_POP_BY_GRP_AND_SEX.plot.bar()
+Population_Group_Plot = Plot_Absolute_Val_Of_SA_POP_BY_GRP_AND_SEX.plot(kind = 'bar', title = 'Population estimate by sex and race')
 Population_Group_Plot.invert_xaxis()
+Population_Group_Plot.set_xlabel("Population Group")
+Population_Group_Plot.set_ylabel("Population (Million)")
+plt.subplots_adjust(left=None, bottom= 0.25, right= None, top=None, wspace=None, hspace=None)
 
 Plot_Percentage_Of_SA_POP_BY_GRP_AND_SEX = SA_POP_BY_GRP_AND_SEX.iloc[0:4, [0, 2, 4]]
 Plot_Percentage_Of_SA_POP_BY_GRP_AND_SEX = Plot_Percentage_Of_SA_POP_BY_GRP_AND_SEX.set_index('Population Group')
-Population_Percentage_Group_Plot = Plot_Percentage_Of_SA_POP_BY_GRP_AND_SEX.plot.bar()
+Population_Percentage_Group_Plot = Plot_Percentage_Of_SA_POP_BY_GRP_AND_SEX.plot(kind = 'bar', title = 'Population estimate by sex and race')
 Population_Percentage_Group_Plot.invert_xaxis()
 
+Population_Percentage_Group_Plot.set_xlabel("Population Group")
+Population_Percentage_Group_Plot.set_ylabel("% Estimate)")
+plt.subplots_adjust(left=None, bottom= 0.25, right= None, top=None, wspace=None, hspace=None)
 #life expectancy
 LIFE_EXPECTANCY_DATA = pd.read_excel ('MYPE report table website_ 2020.xlsx', sheet_name = 'Assumption of LE withoutHIV&TFR')
 LIFE_EXPECTANCY_DATA = LIFE_EXPECTANCY_DATA.iloc[1:20, [0, 2, 3]]
@@ -67,17 +78,77 @@ LIFE_EXPECTANCY_DATA.columns = ['Year', 'Male', 'Female']
 LIFE_EXPECTANCY_DATA['Year'] = LIFE_EXPECTANCY_DATA['Year'].apply(int)
 LIFE_EXPECTANCY_DATA['Year'] = LIFE_EXPECTANCY_DATA['Year'].apply(str)
 LIFE_EXPECTANCY_DATA = LIFE_EXPECTANCY_DATA.set_index('Year')
-LIFE_EXPECTANCY_TREND_PLOT = LIFE_EXPECTANCY_DATA.plot(kind = 'bar',rot= 90)
+LIFE_EXPECTANCY_TREND_PLOT = LIFE_EXPECTANCY_DATA.plot(kind = 'bar',rot= 90,
+                                                       title = 'Assumption of life expectancy')
+
 plt.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
+LIFE_EXPECTANCY_TREND_PLOT.set_xlabel("Year")
+LIFE_EXPECTANCY_TREND_PLOT.set_ylabel("Life expectancy (Years)")
+plt.subplots_adjust(left=None, bottom= 0.23, right= 0.82, top=None, wspace=None, hspace=None)
 
 #population by province
 population_by_province_data = pd.read_excel ('MYPE report table website_ 2020.xlsx', sheet_name = 'MYPE by province')
 population_by_province_data = population_by_province_data.iloc[2:11, 1:3]
 population_by_province_data.columns = ['Province','Population Estimate']
+
+population_by_province_data['Population Estimate'] = population_by_province_data['Population Estimate'].div(1E6)
+
 population_by_province_data = population_by_province_data.set_index('Province')
 population_by_province_plot = population_by_province_data.plot(kind = 'bar',rot= 90, width=0.25)
-print(population_by_province_data)
 
+population_by_province_plot.set_xlabel("Province")
+population_by_province_plot.set_ylabel("Population (Million)")
+plt.subplots_adjust(left=None, bottom= 0.30, right= None, top=None, wspace=None, hspace=None)
+
+#International net migration
+net_migration_data = pd.read_excel ('MYPE report table website_ 2020.xlsx', sheet_name = 'International Net migration')
+net_migration_data = net_migration_data.iloc[0:5, 1:6]
+net_migration_data = net_migration_data.rename(columns = {'Unnamed: 1':'Period'})
+
+net_migration_data['African'] = net_migration_data['African'].div(1E3)
+net_migration_data['Indian/Asian'] = net_migration_data['Indian/Asian'].div(1E3)
+net_migration_data['White'] = net_migration_data['White'].div(1E3)
+net_migration_data['Net Internationl Migration'] = net_migration_data['Net Internationl Migration'].div(1E3)
+
+net_migration_data = net_migration_data.set_index('Period')
+net_migration_plot = net_migration_data.plot(kind = 'bar', rot= 90,
+                                             title = 'International Net migration')
+plt.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
+net_migration_plot.set_xlabel("Period")
+net_migration_plot.set_ylabel("Net Migration (Thousand)")
+plt.subplots_adjust(left=None, bottom= 0.23, right= 0.61, top=None, wspace=None, hspace=None)
+
+#Births and deaths over time
+Births_and_deaths_data = pd.read_excel ('MYPE report table website_ 2020.xlsx', sheet_name = 'Births and deaths over time')
+Births_and_deaths_data.columns = ['Year', 'Number of Births', 'Number of deaths', 'Number of AIDS related deaths', 'Percentage of AIDS related deaths']
+Births_and_deaths_data = Births_and_deaths_data.iloc[1:20, 0:5]
+Births_and_deaths_data = Births_and_deaths_data.rename(columns = {'nan':'Year'})
+Births_and_deaths_data['Year'] = Births_and_deaths_data['Year'].apply(int)
+Births_and_deaths_data['Year'] = Births_and_deaths_data['Year'].apply(str)
+
+AIDS_related_deaths = Births_and_deaths_data.iloc[1:20, [0, 4]]
+Births_and_deaths_data = Births_and_deaths_data.iloc[1:20, 0:4]
+
+Births_and_deaths_data['Number of Births'] = Births_and_deaths_data['Number of Births'].div(1000)
+Births_and_deaths_data['Number of AIDS related deaths'] = Births_and_deaths_data['Number of AIDS related deaths'].div(1000)
+Births_and_deaths_data['Number of deaths'] = Births_and_deaths_data['Number of deaths'].div(1000)
+
+Births_and_deaths_data = Births_and_deaths_data.set_index('Year')
+Births_and_deaths_plot = Births_and_deaths_data.plot(kind = 'bar', rot= 90,
+                                                     title = "Births and deaths over time")
+Births_and_deaths_plot.set_xlabel("Year")
+Births_and_deaths_plot.set_ylabel("Briths and deaths (Thousand)")
+Births_and_deaths_plot.set_ylim(0,1600)
+#plt.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
+plt.subplots_adjust(left=None, bottom= 0.15, right=None, top=None, wspace=None, hspace=None)
+
+#percentage of AIDS related deaths
+AIDS_related_deaths = AIDS_related_deaths.set_index('Year')
+AIDS_related_deaths_plot = AIDS_related_deaths.plot(kind = 'bar', rot= 90,
+                                                    title = "AIDS related deaths per annum")
+AIDS_related_deaths_plot.set_xlabel("Year")
+AIDS_related_deaths_plot.set_ylabel("% of total deathts")
+plt.subplots_adjust(left=None, bottom= 0.23, right= None, top=None, wspace=None, hspace=None)
 
 ########################################################################################################################################
 ########################################################################################################################################
