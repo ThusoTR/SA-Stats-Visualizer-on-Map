@@ -109,7 +109,7 @@ net_migration_data['White'] = net_migration_data['White'].div(1E3)
 net_migration_data['Net Internationl Migration'] = net_migration_data['Net Internationl Migration'].div(1E3)
 
 net_migration_data = net_migration_data.set_index('Period')
-net_migration_plot = net_migration_data.plot(kind = 'bar', rot= 90,
+net_migration_plot = net_migration_data.plot(kind = 'bar', rot= 65,
                                              title = 'International Net migration')
 plt.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
 net_migration_plot.set_xlabel("Period")
