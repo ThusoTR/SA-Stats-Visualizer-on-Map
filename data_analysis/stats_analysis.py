@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-plt.style.use("seaborn")
+plt.style.use("ggplot")
 
 population_data = pd.read_excel ('Country projection by population group, sex and age (2002-2020).xlsx', sheet_name = 'Sheet1')
 
@@ -23,6 +23,7 @@ SA = population_growth.T.plot.bar(color = '#40cfcc', title = 'South Africa popul
 SA.set_xlabel("Year")
 SA.set_ylabel("Population (Million)")
 plt.subplots_adjust(left=None, bottom= 0.25, right= None, top=None, wspace=None, hspace=None)
+plt.savefig('Population Stats/South Africa population trends (2002 to 2020).png', format='png', dpi=600)
 
 population_by_sex_and_age = population_data.iloc[4:38, [23, 24, 43]]
 population_by_sex_and_age.columns = ['Sex', 'Age', 'Population \n(Thousand)']
@@ -41,6 +42,7 @@ fig.subplots_adjust(wspace=0.25)
 
 female_population_by_age.plot.barh(ax = ax, color = '#40cfcc', title = 'Age distribution of\n South Africa female \n population')
 male_population_by_age.plot.barh(x = 'Age', ax = ax2, color = '#40cfcc',title = 'Age distribution of\n South Africa male \npopulation')
+fig.savefig('Population Stats/Population Distrion By Age and Sex.png', format='png', dpi=600)
 
 #S.A popuplation report tables
 
@@ -62,6 +64,7 @@ Population_Group_Plot.invert_xaxis()
 Population_Group_Plot.set_xlabel("Population Group")
 Population_Group_Plot.set_ylabel("Population (Million)")
 plt.subplots_adjust(left=None, bottom= 0.25, right= None, top=None, wspace=None, hspace=None)
+plt.savefig('Population Stats/Population estimate by sex and race.png', format='png', dpi=600)
 
 Plot_Percentage_Of_SA_POP_BY_GRP_AND_SEX = SA_POP_BY_GRP_AND_SEX.iloc[0:4, [0, 2, 4]]
 Plot_Percentage_Of_SA_POP_BY_GRP_AND_SEX = Plot_Percentage_Of_SA_POP_BY_GRP_AND_SEX.set_index('Population Group')
@@ -71,6 +74,8 @@ Population_Percentage_Group_Plot.invert_xaxis()
 Population_Percentage_Group_Plot.set_xlabel("Population Group")
 Population_Percentage_Group_Plot.set_ylabel("% Estimate)")
 plt.subplots_adjust(left=None, bottom= 0.25, right= None, top=None, wspace=None, hspace=None)
+plt.savefig('Population Stats/Percentage_Population estimate by sex and race.png', format='png', dpi=600)
+
 #life expectancy
 LIFE_EXPECTANCY_DATA = pd.read_excel ('MYPE report table website_ 2020.xlsx', sheet_name = 'Assumption of LE withoutHIV&TFR')
 LIFE_EXPECTANCY_DATA = LIFE_EXPECTANCY_DATA.iloc[1:20, [0, 2, 3]]
@@ -85,6 +90,7 @@ plt.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
 LIFE_EXPECTANCY_TREND_PLOT.set_xlabel("Year")
 LIFE_EXPECTANCY_TREND_PLOT.set_ylabel("Life expectancy (Years)")
 plt.subplots_adjust(left=None, bottom= 0.23, right= 0.82, top=None, wspace=None, hspace=None)
+plt.savefig('Population Stats/Assumption of life expectancy.png', format='png', dpi=600)
 
 #population by province
 population_by_province_data = pd.read_excel ('MYPE report table website_ 2020.xlsx', sheet_name = 'MYPE by province')
@@ -99,6 +105,7 @@ population_by_province_plot = population_by_province_data.plot(kind = 'bar',rot=
 population_by_province_plot.set_xlabel("Province")
 population_by_province_plot.set_ylabel("Population (Million)")
 plt.subplots_adjust(left=None, bottom= 0.30, right= None, top=None, wspace=None, hspace=None)
+plt.savefig('Population Stats/population_by_province_plot.png', format='png', dpi=600)
 
 #International net migration
 net_migration_data = pd.read_excel ('MYPE report table website_ 2020.xlsx', sheet_name = 'International Net migration')
@@ -117,6 +124,7 @@ plt.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
 net_migration_plot.set_xlabel("Period")
 net_migration_plot.set_ylabel("Net Migration (Thousand)")
 plt.subplots_adjust(left=None, bottom= 0.23, right= 0.61, top=None, wspace=None, hspace=None)
+plt.savefig('Population Stats/International Net migration.png', format='png', dpi=600)
 
 #Births and deaths over time
 Births_and_deaths_data = pd.read_excel ('MYPE report table website_ 2020.xlsx', sheet_name = 'Births and deaths over time')
@@ -141,6 +149,7 @@ Births_and_deaths_plot.set_ylabel("Briths and deaths (Thousand)")
 Births_and_deaths_plot.set_ylim(0,1600)
 #plt.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
 plt.subplots_adjust(left=None, bottom= 0.15, right=None, top=None, wspace=None, hspace=None)
+plt.savefig('Population Stats/Births and deaths over time.png', format='png', dpi=600)
 
 #percentage of AIDS related deaths
 AIDS_related_deaths = AIDS_related_deaths.set_index('Year')
@@ -149,6 +158,7 @@ AIDS_related_deaths_plot = AIDS_related_deaths.plot(kind = 'bar', rot= 90,
 AIDS_related_deaths_plot.set_xlabel("Year")
 AIDS_related_deaths_plot.set_ylabel("% of total deathts")
 plt.subplots_adjust(left=None, bottom= 0.23, right= None, top=None, wspace=None, hspace=None)
+plt.savefig('Population Stats/AIDS related deaths per annum.png', format='png', dpi=600)
 
 ########################################################################################################################################
 ########################################################################################################################################
@@ -210,6 +220,9 @@ def generate_provinsial_data (first_row, last_row, title_plot_male, female_plot_
                                           title = title_plot_male)
     FEMALE_POPULATION_OF_PROVINCE.plot.barh(x = 'Age', ax = ax2_2, color = '#40cfcc',
                                             title = female_plot_tile)
+    fig.tight_layout()
+    save_path = 'Population Stats/Provincial/' + female_plot_tile.split('\n')[0] + '_Trends.png'
+    plt.savefig(save_path, format='png', dpi=600)
 
     province_population_trend_data = provincial_population_data.iloc[first_row:last_row, 0:22]
     population_increase_of_province = province_population_increase(first_row = 1, last_row = 35, popul_data = province_population_trend_data)
@@ -221,119 +234,92 @@ def generate_provinsial_data (first_row, last_row, title_plot_male, female_plot_
     PROVINCE_DATAFRAME_PLOT.set_xlabel("Year")
     PROVINCE_DATAFRAME_PLOT.set_ylabel("Population (Million)")
 
+    save_path = 'Population Stats/Provincial/' + title_population_trend + '_Trends.png'
+    plt.savefig(save_path, format='png', dpi=600)
+
     return {'increase_of_population_province': PROVINCE_DATAFRAME_PLOT,
             'population_by_age_group_province': fig}
 
-#Analysis of eastern cape population data
-# E_CAPE_first_row = 3
-# last_row_E_CAPE = 38
-# male_E_CAPE_title_plot = 'Eastern Cape male \npopulation by\n age group'
-# E_CAPE_title_plot_female = 'Eastern Cape female \npopulation by\n age group'
-# title_population_trend_E_CAPE = 'Eastern Cape population trend (2002 to 2020)'
-#
-# generate_provinsial_data (E_CAPE_first_row, last_row_E_CAPE, male_E_CAPE_title_plot,
-#                           E_CAPE_title_plot_female, title_population_trend_E_CAPE)
-# FREE_STATE_first_row = 37
-# last_row_FREE_STATE = 72
-# male_FREE_STATE_title_plot = 'Free State male \npopulation by\n age group'
-# FREE_STATE_title_plot_female = 'Free State female \npopulation by\n age group'
-# title_population_trend_FREE_STATE = 'Free State population trend (2002 to 2020)'
-#
-# generate_provinsial_data (FREE_STATE_first_row, last_row_FREE_STATE, male_FREE_STATE_title_plot,
-#                           FREE_STATE_title_plot_female, title_population_trend_FREE_STATE)
-#
-# GAUTENG_first_row = 71
-# last_row_GAUTENG = 106
-# male_GAUTENG_first_row_title_plot = 'Gauteng male \npopulation by\n age group'
-# GAUTENG_first_row_title_plot_female = 'Gauteng female \npopulation by\n age group'
-# title_population_trend_GAUTENG = 'Gauteng population trend (2002 to 2020)'
-#
-# generate_provinsial_data (GAUTENG_first_row, last_row_GAUTENG, male_GAUTENG_first_row_title_plot,
-#                           GAUTENG_first_row_title_plot_female, title_population_trend_GAUTENG)
-#
-# KZN_first_row = 105
-# last_row_KZN = 140
-# male_KZN_first_row_title_plot = 'Kwazulu-Natal male \npopulation by\n age group'
-# KZN_first_row_title_plot_female = 'Kwazulu-Natal \npopulation by\n age group'
-# title_population_trend_KZN = 'KwaZulu-Natal population trend (2002 to 2020)'
-#
-# generate_provinsial_data (KZN_first_row, last_row_KZN, male_KZN_first_row_title_plot,
-#                           KZN_first_row_title_plot_female, title_population_trend_KZN)
-#
-# LIMPOPO_first_row = 139
-# last_row_LIMPOPO = 174
-# male_LIMPOPO_first_row_title_plot = 'Limpopo male \npopulation by\n age group'
-# LIMPOPO_first_row_title_plot_female = 'Limpopo female \npopulation by\n age group'
-# title_population_trend_LIMPOPO = 'Limpopo population trend (2002 to 2020)'
-#
-# generate_provinsial_data (LIMPOPO_first_row, last_row_LIMPOPO, male_LIMPOPO_first_row_title_plot,
-#                           LIMPOPO_first_row_title_plot_female, title_population_trend_LIMPOPO)
-#
-# MPUMALANGA_first_row = 173
-# last_row_MPUMALANGA = 208
-# male_MPUMALANGA_first_row_title_plot = 'Mpumalanga male \npopulation by\n age group'
-# MPUMALANGA_first_row_title_plot_female = 'Mpumalanga female \npopulation by\n age group'
-# title_population_trend_MPUMALANGA = 'Mpumalanga population trend (2002 to 2020)'
-#
-# generate_provinsial_data (MPUMALANGA_first_row, last_row_MPUMALANGA, male_MPUMALANGA_first_row_title_plot,
-#                           MPUMALANGA_first_row_title_plot_female, title_population_trend_MPUMALANGA)
-#
-# N_CAPE_first_row = 207
-# last_row_N_CAPE = 242
-# male_N_CAPE_first_row_title_plot = 'Northern Cape male \npopulation by\n age group'
-# N_CAPE_first_row_title_plot_female = 'Northern Cape female \npopulation by\n age group'
-# title_population_trend_N_CAPE = 'Northern Cape population trend (2002 to 2020)'
-#
-# generate_provinsial_data (N_CAPE_first_row, last_row_N_CAPE, male_N_CAPE_first_row_title_plot,
-#                           N_CAPE_first_row_title_plot_female, title_population_trend_N_CAPE)
-#
-# N_WEST_first_row = 241
-# last_row_N_WEST = 276
-# male_N_WEST_first_row_title_plot = 'North West male \npopulation by\n age group'
-# N_WEST_first_row_title_plot_female = 'North West female \npopulation by\n age group'
-# title_population_trend_N_WEST = 'North West population trend (2002 to 2020)'
-#
-# generate_provinsial_data (N_WEST_first_row, last_row_N_WEST, male_N_WEST_first_row_title_plot,
-#                           N_WEST_first_row_title_plot_female, title_population_trend_N_WEST)
-#
-# W_CAPE_first_row = 275
-# last_row_W_CAPE = 310
-# male_W_CAPE_first_row_title_plot = 'Western Cape male \npopulation by\n age group'
-# W_CAPE_first_row_title_plot_female = 'Western Cape female \npopulation by\n age group'
-# title_population_trend_W_CAPE = 'Western Cape population trend (2002 to 2020)'
-#
-# generate_provinsial_data (W_CAPE_first_row, last_row_W_CAPE, male_W_CAPE_first_row_title_plot,
-#                           W_CAPE_first_row_title_plot_female, title_population_trend_W_CAPE)
+#Analysis of provincial population data
+E_CAPE_first_row = 3
+last_row_E_CAPE = 38
+male_E_CAPE_title_plot = 'Eastern Cape male \npopulation by\n age group'
+E_CAPE_title_plot_female = 'Eastern Cape female \npopulation by\n age group'
+title_population_trend_E_CAPE = 'Eastern Cape population trend (2002 to 2020)'
 
-# eastern_cape_population_data = provincial_population_data.iloc[3:38, 0:22]
-#
-# E_CAPE_POPUL_BY_AGE_AND_SEX = provincial_stats_by_sex_and_age (province_row_start = 3, province_row_end = 38, data_of_province = provincial_population_data)
-#
-# E_CAPE_MALE_POPULATION = E_CAPE_POPUL_BY_AGE_AND_SEX['PROVINCE_MALE_POPULATION']
-# E_CAPE_FEMALE_POPULATION = E_CAPE_POPUL_BY_AGE_AND_SEX['PROVINCE_FEMALE_POPULATION']
-#
-# E_CAPE_MALE_POPULATION.columns = ['Age', 'Population \n(Thousand)']
-# E_CAPE_FEMALE_POPULATION.columns = ['Age', 'Poulation \n(Thousand)']
-#
-# fig, (ax_2, ax2_2) = plt.subplots(ncols=2, sharey=True)
-# ax2_2.set_xlim(0,400)
-# ax_2.set_xlim(0,400)
-# ax_2.invert_xaxis()
-# ax_2.yaxis.tick_right()
-#
-# E_CAPE_MALE_POPULATION.plot.barh(ax = ax_2, color = '#40cfcc', title = 'Age distribution of\n Eastern Cape male \npopulation')
-# E_CAPE_FEMALE_POPULATION.plot.barh(x = 'Age', ax = ax2_2, color = '#40cfcc', title = 'Age distribution of\n Eastern Cape female \npopulation')
-#
-# popul_increase_E_CAPE = province_population_increase(first_row = 1, last_row = 35, popul_data = eastern_cape_population_data)
-#
-# #create dataframe of population increase and plot it
-# E_CAPE_DATAFRAME = pd.DataFrame({'Years': years_range, 'increase_data': popul_increase_E_CAPE})
-# E_CAPE_DATAFRAME_PLOT = E_CAPE_DATAFRAME.plot.bar(x='Years', y='increase_data', rot=90, legend=None,
-#                           title = 'Eastern Cape population trend (2002 to 2020)', color = '#40cfcc')
-# E_CAPE_DATAFRAME_PLOT.set_xlabel("Year")
-# E_CAPE_DATAFRAME_PLOT.set_ylabel("Population (Million)")
-#
-# print(E_CAPE_FEMALE_POPULATION)
-# #fig.tight_layout()
+Eastern_Cape_Plots = generate_provinsial_data (E_CAPE_first_row, last_row_E_CAPE, male_E_CAPE_title_plot,
+                          E_CAPE_title_plot_female, title_population_trend_E_CAPE)
 
-plt.show()
+FREE_STATE_first_row = 37
+last_row_FREE_STATE = 72
+male_FREE_STATE_title_plot = 'Free State male \npopulation by\n age group'
+FREE_STATE_title_plot_female = 'Free State female \npopulation by\n age group'
+title_population_trend_FREE_STATE = 'Free State population trend (2002 to 2020)'
+
+generate_provinsial_data (FREE_STATE_first_row, last_row_FREE_STATE, male_FREE_STATE_title_plot,
+                          FREE_STATE_title_plot_female, title_population_trend_FREE_STATE)
+
+GAUTENG_first_row = 71
+last_row_GAUTENG = 106
+male_GAUTENG_first_row_title_plot = 'Gauteng male \npopulation by\n age group'
+GAUTENG_first_row_title_plot_female = 'Gauteng female \npopulation by\n age group'
+title_population_trend_GAUTENG = 'Gauteng population trend (2002 to 2020)'
+
+generate_provinsial_data (GAUTENG_first_row, last_row_GAUTENG, male_GAUTENG_first_row_title_plot,
+                          GAUTENG_first_row_title_plot_female, title_population_trend_GAUTENG)
+
+KZN_first_row = 105
+last_row_KZN = 140
+male_KZN_first_row_title_plot = 'Kwazulu-Natal male \npopulation by\n age group'
+KZN_first_row_title_plot_female = 'Kwazulu-Natal \npopulation by\n age group'
+title_population_trend_KZN = 'KwaZulu-Natal population trend (2002 to 2020)'
+
+generate_provinsial_data (KZN_first_row, last_row_KZN, male_KZN_first_row_title_plot,
+                          KZN_first_row_title_plot_female, title_population_trend_KZN)
+
+LIMPOPO_first_row = 139
+last_row_LIMPOPO = 174
+male_LIMPOPO_first_row_title_plot = 'Limpopo male \npopulation by\n age group'
+LIMPOPO_first_row_title_plot_female = 'Limpopo female \npopulation by\n age group'
+title_population_trend_LIMPOPO = 'Limpopo population trend (2002 to 2020)'
+
+generate_provinsial_data (LIMPOPO_first_row, last_row_LIMPOPO, male_LIMPOPO_first_row_title_plot,
+                          LIMPOPO_first_row_title_plot_female, title_population_trend_LIMPOPO)
+
+MPUMALANGA_first_row = 173
+last_row_MPUMALANGA = 208
+male_MPUMALANGA_first_row_title_plot = 'Mpumalanga male \npopulation by\n age group'
+MPUMALANGA_first_row_title_plot_female = 'Mpumalanga female \npopulation by\n age group'
+title_population_trend_MPUMALANGA = 'Mpumalanga population trend (2002 to 2020)'
+
+generate_provinsial_data (MPUMALANGA_first_row, last_row_MPUMALANGA, male_MPUMALANGA_first_row_title_plot,
+                          MPUMALANGA_first_row_title_plot_female, title_population_trend_MPUMALANGA)
+
+N_CAPE_first_row = 207
+last_row_N_CAPE = 242
+male_N_CAPE_first_row_title_plot = 'Northern Cape male \npopulation by\n age group'
+N_CAPE_first_row_title_plot_female = 'Northern Cape female \npopulation by\n age group'
+title_population_trend_N_CAPE = 'Northern Cape population trend (2002 to 2020)'
+
+generate_provinsial_data (N_CAPE_first_row, last_row_N_CAPE, male_N_CAPE_first_row_title_plot,
+                          N_CAPE_first_row_title_plot_female, title_population_trend_N_CAPE)
+
+N_WEST_first_row = 241
+last_row_N_WEST = 276
+male_N_WEST_first_row_title_plot = 'North West male \npopulation by\n age group'
+N_WEST_first_row_title_plot_female = 'North West female \npopulation by\n age group'
+title_population_trend_N_WEST = 'North West population trend (2002 to 2020)'
+
+generate_provinsial_data (N_WEST_first_row, last_row_N_WEST, male_N_WEST_first_row_title_plot,
+                          N_WEST_first_row_title_plot_female, title_population_trend_N_WEST)
+
+W_CAPE_first_row = 275
+last_row_W_CAPE = 310
+male_W_CAPE_first_row_title_plot = 'Western Cape male \npopulation by\n age group'
+W_CAPE_first_row_title_plot_female = 'Western Cape female \npopulation by\n age group'
+title_population_trend_W_CAPE = 'Western Cape population trend (2002 to 2020)'
+
+generate_provinsial_data (W_CAPE_first_row, last_row_W_CAPE, male_W_CAPE_first_row_title_plot,
+                          W_CAPE_first_row_title_plot_female, title_population_trend_W_CAPE)
+
+#plt.show()
