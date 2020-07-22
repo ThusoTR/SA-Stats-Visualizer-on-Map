@@ -1,0 +1,15 @@
+.main_dash_body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items:center;
+  height: 100%;
+  vertical-align: middle;
+}
+#mapid{height: 400px;
+       width: 430px;
+       border-radius: 25px}
+
+#statsid{height: 400px;
+         width: 430px;
+         border-radius: 25px}

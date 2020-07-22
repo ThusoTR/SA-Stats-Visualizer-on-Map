@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>{% block title %} Title of site page {% endblock %}</title>
+    {% block links %}
+    {% endblock %}
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light container">
+      <a class = "navbar-brand"href="#" >My Brand</a>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li nav-item active>
+            <a class="nav-link" href="#"> Home </a>
+          </li>
+          <li>
+            <div class="dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Select Location
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">South Africa</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Eastern Cape</a>
+                <a class="dropdown-item" href="#">Free State</a>
+                <a class="dropdown-item" href="#">Gauteng</a>
+                <a class="dropdown-item" href="#">KwaZulu-Natal</a>
+                <a class="dropdown-item" href="#">Limpopo</a>
+                <a class="dropdown-item" href="#">Mpumalanga</a>
+                <a class="dropdown-item" href="#">North West</a>
+                <a class="dropdown-item" href="#">Northern Cape</a>
+                <a class="dropdown-item" href="#">Western Cape</a>
+              </div>
+          </li>
+          <li nav-item active>
+            <a class="nav-link" href="#"> About Project </a>
+          </li>
+
+          </div>
+
+        </ul>
+
+      </div>
+    </nav>
+     {% block content %}
+     {% endblock %}
+  </body>
+</html>
