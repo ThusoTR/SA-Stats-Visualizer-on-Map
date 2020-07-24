@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}
+  South African Statistics
+{% endblock %}
+  {% load static %}
+{% block links %}
+  <link rel="stylesheet" href="{% static "view_SA_stats.css" %}">
+{% endblock %}
+
+{% block content %}
+<div class="stats_container container">
+  <div class="population_stats jumbotron">
+    <div class="heading">
+      <h1>Population Statistics</h1>
+    </div>
+    <img class="img-thumbnail" src="{% static South_Africa_population_trends %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static Population_Distrion_By_Age_and_Sex %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static Percentage_Population_estimate_by_sex_and_race %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static population_per_province %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static Births_and_deaths_over_time %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static AIDS_related_deaths %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static Assumption %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static International_Net_migration %}">
+    <br><br>
+  </div>
+  <div class="economic_stats jumbotron">
+    <div class="heading">
+      <h1>Economic Statistics</h1>
+    </div>
+    <img class="img-thumbnail" src="{% static GDP_Growth %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static SA_Provine_Working_Age_Population %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static SA_Working_Age_Population %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static SA_Unemployment_Narrow_Definition %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static South_Africa_unemployment_trends %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static Unemployment_by_age_group_Expanded %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static Unemployment_per_population_group %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static Unemployment_per_province_Expanded %}">
+    <br><br>
+  </div>
+</div>
+
+{% endblock %}

@@ -19,5 +19,6 @@ from main_application import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^$', views.home_page )
+    re_path(r'^$', views.home_page ),
+    re_path(r'^South$', views.load_south_african_stats ),
 ]
