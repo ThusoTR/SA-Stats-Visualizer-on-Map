@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}
+  {{name_of_province}}
+{% endblock %}
+  {% load static %}
+{% block links %}
+  <link rel="stylesheet" href="{% static "view_provincial_stats.css" %}">
+{% endblock %}
+
+{% block content %}
+  <div class="provincial_content">
+    <br><br>
+    <img class="img-thumbnail" src="{% static population_trends %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static population_by_sex_and_age %}">
+    <br><br>
+    <img class="img-thumbnail" src="{% static unemployment_trends %}">
+    <br><br>
+  </div>
+{% endblock %}

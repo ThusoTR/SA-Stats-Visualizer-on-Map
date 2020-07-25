@@ -8,12 +8,14 @@
 {% endblock %}
 
 {% block content %}
-<div class="stats_container container">
-  <div class="population_stats jumbotron">
+<div class="stats_container container-fluid">
+  <div class="population_stats">
     <div class="heading">
       <h1>Population Statistics</h1>
     </div>
-    <img class="img-thumbnail" src="{% static South_Africa_population_trends %}">
+    <img class="img-thumbnail" src="{% static South_Africa_population_trends %}" >
+    <h5 class="container">Figure 2: Population growth trends of South Africa</h5>
+
     <br><br>
     <img class="img-thumbnail" src="{% static Population_Distrion_By_Age_and_Sex %}">
     <br><br>
@@ -30,11 +32,12 @@
     <img class="img-thumbnail" src="{% static International_Net_migration %}">
     <br><br>
   </div>
-  <div class="economic_stats jumbotron">
+  <div class="economic_stats">
     <div class="heading">
       <h1>Economic Statistics</h1>
     </div>
     <img class="img-thumbnail" src="{% static GDP_Growth %}">
+    <h5 class="container">Figure 2: Economic growth trends of South Africa</h5>
     <br><br>
     <img class="img-thumbnail" src="{% static SA_Provine_Working_Age_Population %}">
     <br><br>
