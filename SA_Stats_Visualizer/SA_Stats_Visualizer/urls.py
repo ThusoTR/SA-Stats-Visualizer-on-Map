@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', views.home_page ),
     re_path(r'^South$', views.load_south_african_stats ),
-    re_path(r'^/<province_name>/$', views.loaf_provincial_stats, name = 'provincial'),
+    path('province/', views.loaf_provincial_stats, name = 'provincial'),
 ]
