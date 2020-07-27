@@ -13,6 +13,7 @@ def province_names():
 
     }
     return province_names
+
 def SA_PICTURES_AND_STATS_VALUES():
     South_Africa_Stats_Dict = {
         'Assumption': "main_application/Population Stats/Assumption of life expectancy.png",
@@ -42,44 +43,44 @@ def PROVINCIAL_PICTURES_AND_STATS_VALUES(province_name):
         'unemployment_trends': "main_application/Economic Stats/Eastern Cape_unemployment_trends.png"
     }
     Free_State_Stats_Dict = {
-        'population_by_sex_and_age': "main_application/Economic Stats/Free State Cape female _Trends.png",
-        'population_trends': "main_application/Economic Stats/Free State population trend (2002 to 2020)_Trends.png",
-        'unemployment_trends': "main_application/Economic Stats/Frees State_unemployment_trends.png"
+        'population_by_sex_and_age': "main_application/Population Stats/Provincial/Free State female _Trends.png",
+        'population_trends': "main_application/Population Stats/Provincial/Free State population trend (2002 to 2020)_Trends.png",
+        'unemployment_trends': "main_application/Economic Stats/Free State_unemployment_trends.png"
     }
     Gauteng_Stats_Dict = {
-        'population_by_sex_and_age':"main_application/Economic Stats/Gauteng female _Trends.png",
-        'population_trends':"main_application/Economic Stats/Gauteng population trend (2002 to 2020)_Trends.png",
+        'population_by_sex_and_age':"main_application/Population Stats/Provincial/Gauteng female _Trends.png",
+        'population_trends':"main_application/Population Stats/Provincial/Gauteng population trend (2002 to 2020)_Trends.png",
         'unemployment_trends': "main_application/Economic Stats/Gauteng_unemployment_trends.png"
     }
     KwaZulu_Natal_Stats_Dict = {
-        'population_by_sex_and_age': "main_application/Economic Stats/Kwazulu-Natal_Trends.png",
-        'population_trends': "main_application/Economic Stats/Kwazulu-Natal population trend (2002 to 2020)_Trends.png",
+        'population_by_sex_and_age': "main_application/Population Stats/Provincial/Kwazulu-Natal _Trends.png",
+        'population_trends': "main_application/Population Stats/Provincial/Kwazulu-Natal population trend (2002 to 2020)_Trends.png",
         'unemployment_trends': "main_application/Economic Stats/Kwazulu-Natal_unemployment_trends.png"
     }
     Limpopo_Stats_Dict = {
-        'population_by_sex_and_age': "main_application/Economic Stats/Limpopo female _Trends.png",
-        'population_trends': "main_application/Economic Stats/Limpopo population trend (2002 to 2020)_Trends.png",
+        'population_by_sex_and_age': "main_application/Population Stats/Provincial/Limpopo female _Trends.png",
+        'population_trends': "main_application/Population Stats/Provincial/Limpopo population trend (2002 to 2020)_Trends.png",
         'unemployment_trends': "main_application/Economic Stats/Limpopo_unemployment_trends.png"
     }
     Mpumalanga_Stats_Dict = {
-        'population_by_sex_and_age': "main_application/Economic Stats/Mpumalanga female _Trends.png",
-        'population_trends': "Mpulamanga population trend (2002 to 2020)_Trends.png",
+        'population_by_sex_and_age': "main_application/Population Stats/Provincial/Mpumalanga female _Trends.png",
+        'population_trends': "main_application/Population Stats/Provincial/Mpumalanga population trend (2002 to 2020)_Trends.png",
         'unemployment_trends': "main_application/Economic Stats/Mpumalanga_unemployment_trends.png"
     }
 
     North_West_Stats_Dict = {
-        'population_by_sex_and_age': "main_application/Economic Stats/North West female _Trends.png",
-        'population_trends': "main_application/Economic Stats/North West population trend (2002 to 2020)_Trends.png",
+        'population_by_sex_and_age': "main_application/Population Stats/Provincial/North West female _Trends.png",
+        'population_trends': "main_application/Population Stats/Provincial/North West population trend (2002 to 2020)_Trends.png",
         'unemployment_trends': "main_application/Economic Stats/North West_unemployment_trends.png"
     }
     Northern_Cape_Stats_Dict = {
-        'population_by_sex_and_age': "main_application/Economic Stats/Northern Cape female _Trends.png",
-        'population_trends': "main_application/Economic Stats/Northern Cape population trend (2002 to 2020)_Trends.png",
+        'population_by_sex_and_age': "main_application/Population Stats/Provincial/Northern Cape female _Trends.png",
+        'population_trends': "main_application/Population Stats/Provincial/Northern Cape population trend (2002 to 2020)_Trends.png",
         'unemployment_trends': "main_application/Economic Stats/Northern Cape_unemployment_trends.png"
     }
     Western_Cape_Stats_Dict = {
-        'population_by_sex_and_age': "main_application/Economic Stats/Western Cape female _Trends.png",
-        'population_trends': "main_application/Economic Stats/Western Cape population trend (2002 to 2020)_Trends.png",
+        'population_by_sex_and_age': "main_application/Population Stats/Provincial/Western Cape female _Trends.png",
+        'population_trends': "main_application/Population Stats/Provincial/Western Cape population trend (2002 to 2020)_Trends.png",
         'unemployment_trends': "main_application/Economic Stats/Western Cape_unemployment_trends.png"
     }
     province_name = province_name.upper()
