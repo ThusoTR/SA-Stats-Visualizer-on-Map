@@ -37,8 +37,8 @@ def SA_PICTURES_AND_STATS_VALUES():
 
 def PROVINCIAL_PICTURES_AND_STATS_VALUES(province_name):
     Eastern_Stats_Dict = {
-        'population_by_sex_and_age': "main_application/Economic Stats/Eastern Cape female _Trends.png",
-        'population_trends': "main_application/Economic Stats/Eastern Cape population trend (2002 to 2020)_Trends.png",
+        'population_by_sex_and_age': "main_application/Population Stats/Provincial/Eastern Cape female _Trends.png",
+        'population_trends': "main_application/Population Stats/Provincial/Eastern Cape population trend (2002 to 2020)_Trends.png",
         'unemployment_trends': "main_application/Economic Stats/Eastern Cape_unemployment_trends.png"
     }
     Free_State_Stats_Dict = {

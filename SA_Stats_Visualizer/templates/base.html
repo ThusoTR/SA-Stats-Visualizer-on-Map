@@ -18,25 +18,25 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li nav-item active>
-            <a class="nav-link" href="#"> Home </a>
+            <a class="nav-link" href="{% url 'index'%}"> Home </a>
           </li>
           <li>
             <div class="dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="{% url 'index' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Select Location
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">South Africa</a>
+                <a class="dropdown-item" href="{% url 'South Africa'%}">South Africa</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'provincial' %}">Eastern Cape</a>
-                <a class="dropdown-item" href="#">Free State</a>
-                <a class="dropdown-item" href="#">Gauteng</a>
-                <a class="dropdown-item" href="#">KwaZulu-Natal</a>
-                <a class="dropdown-item" href="#">Limpopo</a>
-                <a class="dropdown-item" href="#">Mpumalanga</a>
-                <a class="dropdown-item" href="#">North West</a>
-                <a class="dropdown-item" href="#">Northern Cape</a>
-                <a class="dropdown-item" href="#">Western Cape</a>
+                <a class="dropdown-item" href="{% url 'provincial' name='Eastern Cape' %}">Eastern Cape</a>
+                <a class="dropdown-item" href="{% url 'provincial' name='Free State' %}">Free State</a>
+                <a class="dropdown-item" href="{% url 'provincial' name='Gauteng' %}">Gauteng</a>
+                <a class="dropdown-item" href="{% url 'provincial' name='KwaZulu-Natal' %}">KwaZulu-Natal</a>
+                <a class="dropdown-item" href="{% url 'provincial' name='Limpopo' %}">Limpopo</a>
+                <a class="dropdown-item" href="{% url 'provincial' name='Mpumalanga' %}">Mpumalanga</a>
+                <a class="dropdown-item" href="{% url 'provincial' name='North West' %}">North West</a>
+                <a class="dropdown-item" href="{% url 'provincial' name='Northern Cape' %}">Northern Cape</a>
+                <a class="dropdown-item" href="{% url 'provincial' name='Western Cape' %}">Western Cape</a>
               </div>
           </li>
           <li nav-item active>

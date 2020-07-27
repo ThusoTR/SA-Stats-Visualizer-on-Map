@@ -19,7 +19,7 @@ from main_application import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^$', views.home_page ),
-    re_path(r'^South$', views.load_south_african_stats ),
-    path('province/', views.loaf_provincial_stats, name = 'provincial'),
+    re_path(r'^$', views.home_page, name = 'index'),
+    re_path(r'^South Africa$', views.load_south_african_stats, name = 'South Africa'),
+    path('province/<str:name>', views.loaf_provincial_stats, name = 'provincial'),
 ]

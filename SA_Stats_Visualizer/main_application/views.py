@@ -9,11 +9,16 @@ def load_south_african_stats(request, province_name):
     stats_pictures = stats_picture_names.SA_PICTURES_AND_STATS_VALUES()
     names_of_provinces = stats_picture_names.province_names()
     return render(request, 'view_SA_stats.html', [stats_pictures, names_of_provinces])
-def loaf_provincial_stats(request):
+def loaf_provincial_stats(request, name):
     province_stats_values_dict = {
-        'province_name': province_name
+        'province_name': name
     }
     stats_pictures = stats_picture_names.SA_PICTURES_AND_STATS_VALUES()
-    provincial_stats_pictures = stats_picture_names.SA_PICTURES_AND_STATS_VALUES()
-    return render(request, 'view_provincial_stats.html', [province_stats_values_dict, stats_pictures,
-                                                          provincial_stats_pictures])
+    provincial_stats_pictures = stats_picture_names.PROVINCIAL_PICTURES_AND_STATS_VALUES(name)
+
+    main_context_dict = {'province_name': name}
+    #main_context_dict.update(stats_pictures)
+    main_context_dict.update(provincial_stats_pictures)
+
+    print(main_context_dict)
+    return render(request, 'view_provincial_stats.html', main_context_dict)
