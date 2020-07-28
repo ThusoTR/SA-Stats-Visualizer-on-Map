@@ -4,8 +4,12 @@
   flex-wrap: wrap;
   align-items:center;
   justify-content: space-evenly;
+  flex-grow: 1;
 }
 img{
   max-width: 400px;
   max-height: 400px;
+}
+.paragraph_content{
+  max-width: 550px;
 }
