@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="stats_container container-fluid">
+<div class="stats_container container-sm">
   <div class="population_stats">
     <div class="heading">
       <h1>Population Statistics</h1>
@@ -30,20 +30,56 @@
     <img class="img-thumbnail" src="{% static Population_Distrion_By_Age_and_Sex %}">
     <h5 class="container">Figure 2: Population by age group and sex</h5>
       <div class="paragraph_content">
-        <p>Figure 2 demonstates the South African 2020-mid year estimated population by age group and sex.</p>
+        <p>Figure 2 demonstates the South African 2020-mid year estimated population by age group and sex.
+        More than 60% of South Africa's population is made up of children aged 0 - 14 years and adults aged
+      15 - 34 years. At older ages, there is a surplus of females to males. </p>
       </div>
     <br>
     <img class="img-thumbnail" src="{% static Percentage_Population_estimate_by_sex_and_race %}">
+    <h5 class="container">Figure 3: Population estimate by population group and sex</h5>
+    <div class="paragraph_content">
+      <p>The black African population group constitutes approximately 80% of the total population
+        of South Africa. Figure 3 also shows that there is approximate population a 1:1 ratio of
+        females to males for the overall population of South Africa. </p>
+    </div>
     <br><br>
     <img class="img-thumbnail" src="{% static population_per_province %}">
+    <h5 class="container">Figure 4: Population estimate by province</h5>
+    <div class="paragraph_content">
+      <p>Gauteng and Kwazulu-Natal are two most populuous provinces in South Africa, each with a population
+      above 15 million and 11 Million respectively. 26% of the South African population live in Gauteng.  </p>
+    </div>
     <br><br>
     <img class="img-thumbnail" src="{% static Births_and_deaths_over_time %}">
+    <h5 class="container">Figure 5: Births and deaths over time</h5>
+    <div class="paragraph_content">
+      <p>South Africa receives over 1 million births and experiences over 500 thousand deaths annually. Between 2002 and 2010, over
+      200 thousand of the total deaths were AIDS related. This value has decrease to aprroximately 80 thousand in 2019. </p>
+    </div>
     <br><br>
     <img class="img-thumbnail" src="{% static AIDS_related_deaths %}">
+    <h5 class="container">Figure 6: HIV related deaths trends (2002 to mid year-2020)</h5>
+    <div class="paragraph_content">
+      <p>The percentage of the AIDS related deaths has decreased a peak of 38% in 2006 to
+        just over 15% in 2019. This shows that the ARV drugs program has helped reduce the number of
+       AIDS related deaths pro-long the lives of people living with HIV.</p>
+    </div>
     <br><br>
     <img class="img-thumbnail" src="{% static Assumption %}">
+    <h5 class="container">Figure 7: Assummed life expectancy trends (2002 to mid year-2020)</h5>
+    <div class="paragraph_content">
+      <p>Between 2002 and mid-year 2020, the assummed life expectancy of both males and females has increased.
+      The assumed life expectancy of females is 74 years, which 10 more than the 64 years assummed life expancy of males
+    in South Africa.</p>
+    </div>
     <br><br>
     <img class="img-thumbnail" src="{% static International_Net_migration %}">
+    <h5 class="container">Figure 8: Net international migration trends</h5>
+    <div class="paragraph_content">
+      <p>From 2016 to 2021, South Africa is expected to experience a net international migration of approximately 800 thousand.
+       Since 1985, South Africa has experienced consistently positive international net migration in the Black African, Coloured, and Indian/Asian
+     population groups. The White population group has consistently experienced a negative international net migration since 1985.</p>
+    </div>
     <br><br>
   </div>
   <div class="economic_stats">
@@ -51,25 +87,68 @@
       <h1>Economic Statistics</h1>
     </div>
     <div class="paragraph_content">
-      <p>Figures 10 to 19 demostrate an overview of economic statistics of South Africa. Plots that demonstrate the
+      <p>Figures 9 to 17 demostrate an overview of economic statistics of South Africa. Plots that demonstrate the
       the GDP growth, unemployment trends, etc are provided.</p>
     </div>
     <img class="img-thumbnail" src="{% static GDP_Growth %}">
-    <h5 class="container">Figure 2: Economic growth trends of South Africa</h5>
+    <h5 class="container">Figure 9: GDP growth trends of South Africa</h5>
+    <div class="paragraph_content">
+      <p>In 2019, South Africa had a year on year GDP growth of 0.2 %. Between 2005 and 2007, South Africa
+      experienced a GDP growth above 5 %. </p>
+    </div>
     <br><br>
     <img class="img-thumbnail" src="{% static SA_Provine_Working_Age_Population %}">
+    <h5 class="container">Figure 10: Working age population per province</h5>
+    <div class="paragraph_content">
+      <p>In terms of working age population, Gauteng and Kwazulu-Natal are two most populuous provinces in South Africa, each with a working age
+        population above 10 million and 7 Million respectively. </p>
+    </div>
     <br><br>
     <img class="img-thumbnail" src="{% static SA_Working_Age_Population %}">
+    <h5 class="container">Figure 11: Working age population per population group</h5>
+    <div class="paragraph_content">
+      <p>South Africa has a working-age population of apporoximately 38 million. The Black African population
+      group contributes approximately 31 million people in the working age population. The Coloured, Indian/Asian, and White population
+    groups contribute approximately 3.5 million, 2.9 million, and 1 million respectively to the working age population.</p>
+    </div>
     <br><br>
     <img class="img-thumbnail" src="{% static SA_Unemployment_Narrow_Definition %}">
+    <h5 class="container">Figure 12: Unemployment trends of South Africa</h5>
+    <div class="paragraph_content">
+      <p>The unemployment (narrow definition) rate of South Africa has increased from approximate 22 % in 2002
+      to approximately 30 %  in March 2020.  </p>
+    </div>
     <br><br>
     <img class="img-thumbnail" src="{% static South_Africa_unemployment_trends %}">
+    <h5 class="container">Figure 13: Unemployment trends of South Africa</h5>
+    <div class="paragraph_content">
+      <p>The unemployment (expanded definition) rate of South Africa has increased from approximate 27 % in 2002
+      to approximately 40 %  in March 2020. This means that out of the approximately 38 million people in the working age
+    population, only 16 million are employed, 10 , million are unemployed, and  approximately 12 million are not economically active.</p>
+    </div>
     <br><br>
     <img class="img-thumbnail" src="{% static Unemployment_by_age_group_Expanded %}">
+    <h5 class="container">Figure 14: Unemployment by age group</h5>
+    <div class="paragraph_content">
+      <p>Figure 14 shows that youths are the most affected by high unemployment rates. The unemployment (expaned definition) of youths in the
+      age group 15-24 and 25 - 34 years in March 2020 was approximately 70 % and 47 % respectively. These figures are well above the national average of
+      39.7 % and result in a youth unemployment (expaned definition) rate of
+    apporoximately 58 %. </p>
+    </div>
     <br><br>
     <img class="img-thumbnail" src="{% static Unemployment_per_population_group %}">
+    <h5 class="container">Figure 15: Unemployment per population group</h5>
+    <div class="paragraph_content">
+      <p>The Black African and Coloured population groups are the most affected by unemployment, each with an unemployment (expanded definition) rate
+      of 44 % and 31 % respectively. </p>
+    </div>
     <br><br>
     <img class="img-thumbnail" src="{% static Unemployment_per_province_Expanded %}">
+    <h5 class="container">Figure 16: Unemployment per province</h5>
+    <div class="paragraph_content">
+      <p>The province of the Western Cape has the lowest unemployment (expaned definition) rate, sittimg at 25 %. All other provinces except Gauteng (33 %)
+       have an unemployment rate that is at least 40 %. The Eastern Cape has the highest unemployment rate, sitting at 48 %. </p>
+    </div>
     <br><br>
   </div>
 </div>
