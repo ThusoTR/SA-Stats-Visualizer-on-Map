@@ -3,9 +3,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items:center;
+  width: 100%;
 }
 #mapid{height: 400px;
-       width: 430px;
+       width: 100%;
        border-radius: 25px}
 
 #statsid{height: 400px;

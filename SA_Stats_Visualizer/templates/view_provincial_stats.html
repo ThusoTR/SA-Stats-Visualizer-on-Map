@@ -10,11 +10,46 @@
 {% block content %}
   <div class="provincial_content">
     <br><br>
-    <img class="img-thumbnail" src="{% static population_trends %}">
-    <br><br>
-    <img class="img-thumbnail" src="{% static population_by_sex_and_age %}">
-    <br><br>
-    <img class="img-thumbnail" src="{% static unemployment_trends %}">
-    <br><br>
+    <div class="proncial_stat">
+      <h1>{{name_of_province}} population stats</h1>
+      <br>
+      <img class="img-thumbnail" src="{% static population_trends %}">
+      <h5 class="container">Figure 1: Population growth trends of South Africa</h5>
+      <br>
+      <div class="paragraph_content">
+        <p>The estimated population growth trends of {{name_of_province}} is demontstrated in figure 1.
+          The estimated population of name_of_province grew from {{population_2002}} in {{population_2020}}, to 59 million in
+        2020. {{contribution_to_SA_population}} of the total South African population live in the Western Cape and this province
+      contributes {{contribution_to_gdp}} to the nation GDP. </p>
+      </div>
+      <br>
+    </div>
+    <div class="proncial_stat">
+      <h1>Population by age group and sex</h1>
+      <br>
+      <img class="img-thumbnail" src="{% static population_by_sex_and_age %}">
+      <h5 class="container">Figure 2: Population by age group and sex</h5>
+      <br>
+      <div class="paragraph_content">
+        <p>Figure 2 demonstates the {{name_of_province}} 2020-mid year estimated population by age group and sex.
+        At older ages, there is a surplus of females to males.</p>
+      </div>
+      <br>
+    </div>
+
+    <div class="proncial_stat">
+      <h1>{{name_of_province}} unemployment </h1>
+      <br><br>
+      <img class="img-thumbnail" src="{% static unemployment_trends %}">
+      <h5 class="container">Figure 3: Unemployment per population group</h5>
+      <br>
+      <div class="paragraph_content">
+        <p>The unemployment (expanded definition) rate of {{name_of_province}} has increased from approximate {{unemployed_2002}} in 2008
+        to approximately {{unemployed_2020}}  in March 2020. This means that out of the approximately {{working_age_population}} people in the working age
+      population, only {{employed}} are employed, {{unemployed}} are unemployed, and  approximately {{not_economically_active}} are not economically active. </p>
+      </div>
+      <br><br>
+    </div>
+
   </div>
 {% endblock %}
