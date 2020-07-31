@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-  Stats Visualisor  Dashboard
+  Stats Visualisor Dashboard
 {% endblock %}
 
 {% block links %}
@@ -23,24 +23,25 @@
 
 {% block content %}
   <div class="main_dash_body">
-    <div class="stats_panel jumbotron " id = "statsid">
-      <h1>Stats:</h1>
-      <p id = 'country'> country: South Africa </p>
-      <p id = 'province'> province </p>
-      <p id = 'size'> size </p>
-      <p id = 'population'> population</p>
-      <p id = 'population_density'> population_density </p>
-      <p id = 'GDP'> GDP </p>
-      <a id="1"  class = "province" href="#" class="btn btn-primary btn-lg active" role="button">Limpopo</a>
-      <a id = "2" class = "province" href="#" class="btn btn-primary btn-lg active" role="button">Gauteng</a>
-      <a id = "3" class = "province" href="#" class="btn btn-primary btn-lg active" role="button">Mpumalanga</a>
-      <a id="4" class = "province" href="#" class="btn btn-primary btn-lg active" role="button">Western Cape</a>
-      <a id = "6" class = "province" href="#" class="btn btn-primary btn-lg active" role="button">Northern Cape</a>
-      <a id = "5" class = "province" href="#" class="btn btn-primary btn-lg active" role="button">Free State</a>
-      <a id="7" class = "province" href="#" class="btn btn-primary btn-lg active" role="button">North West</a>
-      <a id = "8" class = "province" href="#" class="btn btn-primary btn-lg active" role="button">Eastern Cape</a>
-      <a id = "9" class = "province" href="#" class="btn btn-primary btn-lg active" role="button">KwaZulu-Natal</a>
-      <a id = "10" class = "country" href="#" class="btn btn-primary btn-lg active" role="button">South Africa</a>
+    <div class="stats_panel jumbotron" id = "statsid">
+      <h3>Overall Statistics</h3>
+      <p id = 'country'> <strong>Country: </strong>South Africa</p>
+      <p id="province"></p>
+      <p id = 'size'><strong>Size: </strong>1, 220, 813 km<sup>2</sup></p>
+      <p id = 'population'><strong>Population: </strong>59 million</p>
+      <p id = 'population_density'><strong>Population Density: </strong>48 per km<sup>2</sup></p>
+      <p id = 'unemployment'><strong>Expaned Unemployment Rate: </strong>40 %</p>
+      <p id = 'GDP'> <strong>GDP: </strong> R 4.65 trillion</p>
+      <a id="1" href="#" class="province btn btn-primary btn-lg active" role="button">Limpopo</a>
+      <a id = "2" href="#" class="province btn btn-primary btn-lg active" role="button">Gauteng</a>
+      <a id = "3" href="#" class="province btn btn-primary btn-lg active" role="button">Mpumalanga</a>
+      <a id="4" href="#" class="province btn btn-primary btn-lg active" role="button">Western Cape</a>
+      <a id = "6" href="#" class="province btn btn-primary btn-lg active" role="button">Northern Cape</a>
+      <a id = "5" href="#" class="province province btn btn-primary btn-lg active" role="button">Free State</a>
+      <a id="7" href="#" class="province btn btn-primary btn-lg active" role="button">North West</a>
+      <a id = "8" href="#" class="province btn btn-primary btn-lg active" role="button">Eastern Cape</a>
+      <a id = "9" href="#" class="province btn btn-primary btn-lg active" role="button">KwaZulu-Natal</a>
+      <a id = "10" href="#" class="country btn btn-primary btn-lg active" role="button">South Africa</a>
     </div>
     <div class="mymap jumbotron" id = "mapid">
 

@@ -1,3 +1,4 @@
+$('.province').hide();
 var mapboxAccessToken = "pk.eyJ1IjoidGh1c29wZXJzb25hbCIsImEiOiJja2NibnRwdm8yNGJmMnFxc2xvdGwwZmV1In0.VDRARBxZIo4AEaTn0n9JRA";
 var map = L.map('mapid').setView([-29.087217, 24.1596], 4);
 
@@ -56,18 +57,31 @@ var stats = {'Limpopo': {'province': "Limpopo", 'popuplation': '5.8 million', 's
 
 function set_display_stats(province_name)
 {
-  document.getElementById("province").innerHTML = "Province<strong>: " + stats[province_name]['province'];
-  document.getElementById("size").innerHTML = "Size: " + stats[province_name]['size'];
-  document.getElementById("population").innerHTML = "Popuplation: " + stats[province_name]['popuplation'];
-  document.getElementById("population_density").innerHTML = "Population Density: " + stats[province_name]['population_density'];
-  document.getElementById("GDP").innerHTML = "% Contribution to National GDP: " + stats[province_name]['GDP'];
+  $('#province').show();
+  document.getElementById("province").innerHTML = "<strong>Province: </strong>" + stats[province_name]['province'];
+  document.getElementById("size").innerHTML = "<strong>Size: </strong>" + stats[province_name]['size'] + " km<sup>2</sup> (" +  stats[province_name]['per_of_SA_land'] +" of total S.A. land mass)";
+  document.getElementById("population").innerHTML = "<strong>Popuplation: </strong>" + stats[province_name]['popuplation'];
+  document.getElementById("population_density").innerHTML = "<strong>Population Density: </strong>" + stats[province_name]['population_density'] + " per km<sup>2</sup>";
+  document.getElementById("GDP").innerHTML = "<strong>% Contribution to National GDP: </strong>" + stats[province_name]['GDP'];
 
-  $('a').hide();
+  $('.province').hide();
   province_id = "#" + stats[province_name]['id'];
   $(province_id).show();
-
+  $('.country').hide();
 }
 
+function reset_stats_panel()
+{
+  $('#province').hide()
+  document.getElementById("size").innerHTML = "<strong>Size: </strong>" + "1, 220, 813 km<sup>2</sup></p>";
+  document.getElementById("population").innerHTML = "<strong>Popuplation: </strong>" + "59 million";
+  document.getElementById("population_density").innerHTML = "<strong>Population Density: </strong>" + "48 per km<sup>2</sup></p>";
+  document.getElementById("GDP").innerHTML = "<strong>% Contribution to National GDP: </strong>" + "R 4.65 trillion";
+
+  $('.province').hide();
+  $('.country').show();
+
+}
 var previous_layer, previous_layer_set = false;  //stores layer that was hightlighted
 
 function resetHighlight(e) {
@@ -82,6 +96,7 @@ function highlightFeature(e) {
     {
       resetHighlight(e)
       high_lighted_porvince[layer.feature.properties.name] = false;
+      reset_stats_panel();
     }
     else{
 
