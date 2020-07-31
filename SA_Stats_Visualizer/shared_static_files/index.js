@@ -27,32 +27,32 @@ var high_lighted_porvince = {'Limpopo': false, 'Gauteng': false, 'Mpumalanga': f
                   'Free State': false, 'Western Cape': false, 'Northern Cape': false,
                   'North West': false, 'Eastern Cape': false, 'KwaZulu-Natal': false,};
 
-var stats = {'Limpopo': {'province': "Limpopo", 'popuplation': 12351211, 'size': 123123,
-                         'population_density': 77566, 'GDP': 232323, },
+var stats = {'Limpopo': {'province': "Limpopo", 'popuplation': '5.8 million', 'size': '125, 755', 'per_of_SA_land': '10.2 %',
+                         'population_density': '46', 'GDP': '7 %', 'id': '1'},
 
-             'Gauteng': {'province': "Gauteng", 'popuplation': 12351211, 'size': 123123,
-                        'population_density': 77566, 'GDP': 232323, },
+             'Gauteng': {'province': "Gauteng", 'popuplation': '15.5 million', 'size': '18, 178', 'per_of_SA_land': '1.5 %',
+                        'population_density': '853', 'GDP': '34 %', 'id': '2'},
 
-             'Mpumalanga': {'province': "Mpumalanga", 'popuplation': 12351211, 'size': 123123,
-                       'population_density': 77566, 'GDP': 232323, },
+             'Mpumalanga': {'province': "Mpumalanga", 'popuplation': '4.7 million', 'size': '76, 495', 'per_of_SA_land': '6.3 %',
+                       'population_density': '61', 'GDP': '8 %', 'id': '3' },
 
-             'Free State': {'province': "Free State", 'popuplation': 12351211, 'size': 123123,
-                        'population_density': 77566, 'GDP': 232323, },
+             'Free State': {'province': "Free State", 'popuplation': '2.9 million', 'size': '129, 755', 'per_of_SA_land': '10.6 %',
+                        'population_density': '22', 'GDP': '5 %', 'id': '5'},
 
-             'Western Cape': {'province': "Western Cape", 'popuplation': 12351211, 'size': 123123,
-                        'population_density': 77566, 'GDP': 232323, },
+             'Western Cape': {'province': "Western Cape", 'popuplation': '7 million', 'size': '129, 462', 'per_of_SA_land': '10.6 %',
+                        'population_density': '54', 'GDP': '14 %', 'id': '4'},
 
-             'Northern Cape': {'province': "Northern Cape", 'popuplation': 12351211, 'size': 123123,
-                        'population_density': 77566, 'GDP': 232323, },
+             'Northern Cape': {'province': "Northern Cape", 'popuplation': '1.3 million', 'size': '372, 889', 'per_of_SA_land': '30.5 %',
+                        'population_density': '3.5', 'GDP': '2 %', 'id': '6'},
 
-             'North West': {'province': "North West", 'popuplation': 12351211, 'size': 123123,
-                        'population_density': 77566, 'GDP': 232323, },
+             'North West': {'province': "North West", 'popuplation': '4.1 million', 'size': '104, 882', 'per_of_SA_land': '8.6 %',
+                        'population_density': '39', 'GDP': '6 %', 'id': '7'},
 
-             'Eastern Cape': {'province': "Eastern Cape", 'popuplation': 12351211, 'size': 123123,
-                        'population_density': 77566, 'GDP': 232323, },
+             'Eastern Cape': {'province': "Eastern Cape", 'popuplation': '6.7 million', 'size': '168, 966', 'per_of_SA_land': '13.8 %',
+                        'population_density': '40', 'GDP': '8 %', 'id': '8'},
 
-             'KwaZulu-Natal': {'province': "KwaZulu-Natal", 'popuplation': 5544, 'size': 5454,
-                        'population_density': 5545, 'GDP': 4545, },};
+             'KwaZulu-Natal': {'province': "KwaZulu-Natal", 'popuplation': '11.5 million', 'size': '94, 361', 'per_of_SA_land': '7.7 %',
+                        'population_density': '122', 'GDP': '16 %', 'id': '9' },};
 
 function set_display_stats(province_name)
 {
@@ -60,7 +60,12 @@ function set_display_stats(province_name)
   document.getElementById("size").innerHTML = "Size: " + stats[province_name]['size'];
   document.getElementById("population").innerHTML = "Popuplation: " + stats[province_name]['popuplation'];
   document.getElementById("population_density").innerHTML = "Population Density: " + stats[province_name]['population_density'];
-  document.getElementById("GDP").innerHTML = "GDP: " + stats[province_name]['GDP'];
+  document.getElementById("GDP").innerHTML = "% Contribution to National GDP: " + stats[province_name]['GDP'];
+
+  $('a').hide();
+  province_id = "#" + stats[province_name]['id'];
+  $(province_id).show();
+
 }
 
 var previous_layer, previous_layer_set = false;  //stores layer that was hightlighted
