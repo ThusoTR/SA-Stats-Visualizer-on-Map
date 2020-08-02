@@ -80,7 +80,7 @@ function reset_stats_panel()
   document.getElementById("size").innerHTML = "<strong>Size: </strong>" + "1, 220, 813 km<sup>2</sup></p>";
   document.getElementById("population").innerHTML = "<strong>Popuplation: </strong>" + "59 million";
   document.getElementById("population_density").innerHTML = "<strong>Population Density: </strong>" + "48 per km<sup>2</sup></p>";
-  document.getElementById("GDP").innerHTML = "<strong>% Contribution to National GDP: </strong>" + "R 4.65 trillion";
+  document.getElementById("GDP").innerHTML = "<strong>National GDP: </strong>" + "R 4.65 trillion";
   document.getElementById("unemployment").innerHTML = "<strong>Expaned Unemployment Rate: </strong>" + '40 %';
 
   $('.province').hide();
