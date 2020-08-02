@@ -22,4 +22,5 @@ urlpatterns = [
     re_path(r'^$', views.home_page, name = 'index'),
     re_path(r'^South Africa$', views.load_south_african_stats, name = 'South Africa'),
     path('province/<str:name>', views.loaf_provincial_stats, name = 'provincial'),
+    re_path(r'^about$', views.about_page, name = 'about'),
 ]

@@ -5,6 +5,7 @@
   justify-content: space-evenly;
   flex-grow: 1;
   align-items: baseline;
+  margin-top: 3%;
 }
 img{
   max-width: 400px;

@@ -1,0 +1,8 @@
+.about_content{
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 5%;
+  border-radius: 25px;
+  background-color: #f5f5f5;
+}
