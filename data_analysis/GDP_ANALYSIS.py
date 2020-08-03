@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from cycler import cycler
 
 plt.rcParams['axes.prop_cycle'] = cycler(color='bgrcmyk')
-plt.style.use("ggplot")
+plt.style.use("seaborn-whitegrid")
 
 GDP_DATA = pd.read_excel ('GDPp 1q20 previous format.xls', sheet_name = 'Table2 ')
 GDP_DATA.columns = GDP_DATA.iloc[0]

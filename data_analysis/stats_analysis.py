@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-plt.style.use("ggplot")
+plt.style.use("seaborn-whitegrid")
 
 population_data = pd.read_excel ('Country projection by population group, sex and age (2002-2020).xlsx', sheet_name = 'Sheet1')
 
@@ -63,7 +63,7 @@ Population_Group_Plot = Plot_Absolute_Val_Of_SA_POP_BY_GRP_AND_SEX.plot(kind = '
 Population_Group_Plot.invert_xaxis()
 Population_Group_Plot.set_xlabel("Population Group")
 Population_Group_Plot.set_ylabel("Population (Million)")
-plt.subplots_adjust(left=None, bottom= 0.25, right= None, top=None, wspace=None, hspace=None)
+plt.tight_layout()
 plt.savefig('Population Stats/Population estimate by sex and race.png', format='png', dpi=600)
 
 Plot_Percentage_Of_SA_POP_BY_GRP_AND_SEX = SA_POP_BY_GRP_AND_SEX.iloc[0:4, [0, 2, 4]]
@@ -322,4 +322,4 @@ title_population_trend_W_CAPE = 'Western Cape population trend (2002 to 2020)'
 generate_provinsial_data (W_CAPE_first_row, last_row_W_CAPE, male_W_CAPE_first_row_title_plot,
                           W_CAPE_first_row_title_plot_female, title_population_trend_W_CAPE)
 
-#plt.show()
+plt.show()

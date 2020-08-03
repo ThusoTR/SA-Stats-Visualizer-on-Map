@@ -14,12 +14,12 @@
       <h1>{{name_of_province}} population stats</h1>
       <br>
       <img class="img-thumbnail" src="{% static population_trends %}">
-      <h5 class="container">Figure 1: Population growth trends of South Africa</h5>
+      <h5 class="container">Figure 1: Population growth trend of South Africa</h5>
       <br>
       <div class="paragraph_content">
-        <p>The estimated population growth trends of {{name_of_province}} is demontstrated in figure 1.
-          The estimated population of name_of_province grew from {{population_2002}} in {{population_2020}}, to 59 million in
-        2020. {{contribution_to_SA_population}} of the total South African population live in the Western Cape and this province
+        <p>The estimated population growth trend of {{name_of_province}} is demontstrated in figure 1.
+          The estimated population of {{name_of_province}} grew from {{population_2002}} in 2002, to {{population_2020}} in
+        2020. {{contribution_to_SA_population}} of the total South African population live in {{name_of_province}} and this province
       contributes {{contribution_to_gdp}} to the nation GDP. </p>
       </div>
       <br>
@@ -46,7 +46,7 @@
       <div class="paragraph_content">
         <p>The unemployment (expanded definition) rate of {{name_of_province}} has increased from approximate {{unemployed_2002}} in 2008
         to approximately {{unemployed_2020}}  in March 2020. This means that out of the approximately {{working_age_population}} people in the working age
-      population, only {{employed}} are employed, {{unemployed}} are unemployed, and  approximately {{not_economically_active}} are not economically active. </p>
+      population of {{name_of_province}}, only {{employed}} are employed, {{unemployed}} are unemployed, and  approximately {{not_economically_active}} are not economically active. </p>
       </div>
       <br><br>
     </div>

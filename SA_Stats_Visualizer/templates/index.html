@@ -45,10 +45,15 @@
       <a id = "9" href="#" class="container province btn btn-outline-primary btn-sm" role="button">Load Detailed KwaZulu-Natal Stats</a>
       <a id = "10" href="{% url 'South Africa'%}" class="container country btn btn-outline-primary btn-sm" role="button">Load Detailed South African Stats</a>
     </div>
-    div
-    <div class="mymap jumbotron" id = "mapid">
+    <div class="map_content">
+      <div class="map_heading">
+          <p>Click on a South African province on the map and view it's stats on the panel above </p>
+      </div>
+      <div class="mymap" id = "mapid">
 
+      </div>
     </div>
+
   </div>
 
   <script type="text/javascript" src="{% static "index.js" %}"> </script>

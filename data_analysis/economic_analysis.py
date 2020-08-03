@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-plt.style.use("ggplot")
+plt.style.use("seaborn-whitegrid")
 
 Working_Age_Population = pd.read_excel ('QLFS Trends 2008-2020Q1.xlsx', sheet_name = 'Table1')
 Working_Age_Population.columns = Working_Age_Population.iloc[0]
@@ -188,7 +188,7 @@ MP_rows = slice(249, 250)
 MP_columns = working_columns
 MP_title = 'Mpumalanga: Labour force characteristics - Expanded \ndefinition of unemployment'
 provincial_unemploment_trends(list_rows = MP_rows, column_list = MP_columns,
-                              title_province = MP_title, province_name = "North West")
+                              title_province = MP_title, province_name = "Mpumalanga")
 
 LP_rows = slice(260, 261)
 LP_columns = working_columns
@@ -243,4 +243,4 @@ plot_unemployment_by_population_group.set_ylabel("Unemployment rate(%)")
 plt.tight_layout()
 plt.savefig('Economic Stats/Unemployment per population group_Expanded.png', format='png', dpi=600)
 
-# plt.show()
+plt.show()
